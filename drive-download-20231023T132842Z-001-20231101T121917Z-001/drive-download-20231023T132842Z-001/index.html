@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STRANGER THINGS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="cabeca"> 
+        <nav>
+            <ul>
+                <li><a href="usuario.html">Usuário</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="temporada.html">Personagem</a></li>
+            </ul>
+            <ul>
+                <li><a href="satisfacao.html">Satisfação</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+
+    <div id="banner">
+        <div id="mensagem">STRANGER THINGS</div>
+        <img src="things.jpg" alt="" id="imagem">
+    </div>
+    <h1>Vem conhcer o mundo de ST!</h1>
+
+    <p>TEMPORADAS</p>
+        <img src="st.png" alt="Imagem" id="nada">
+        <img src="st.jfif" alt="Imagem" id="nada">
+        <img src="st1.jpg" alt="Imagem" id="nada">
+        <img src="st2.jpg" alt="Imagem" id="nada">
+        <img src="st3.jpg" alt="Imagem" id="nada">
+
+   <script>
+        var mensagemElement = document.getElementById("mensagem");
+        var bannerWidth = document.getElementById("banner").offsetWidth;
+    
+        function animarMensagem() {
+            var left = -200; // Inicializa a posição à esquerda da tela
+            var interval = setInterval(function() {
+                left += 5; // Move 5 pixels à direita a cada iteração
+                mensagemElement.style.left = left + "px";
+    
+                // Verifica se a mensagem atingiu o final do banner
+                if (left >= bannerWidth) {
+                    clearInterval(interval); // Para a animação
+                    setTimeout(function() {
+                        mensagemElement.style.left = "-200px"; // Reinicia a mensagem à esquerda
+                        animarMensagem(); // Inicia a animação novamente
+                    }, 1000); // Espera 1 segundo antes de reiniciar
+                }
+            }, 30); // Intervalo de 30 milissegundos para suavizar a animação
+        }
+    
+        animarMensagem(); // Inicia a animação quando a página carrega
+    </script>
+</body>
+</html>

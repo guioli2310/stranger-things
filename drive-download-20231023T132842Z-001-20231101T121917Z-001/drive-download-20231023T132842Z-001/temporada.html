@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cadastro Temporada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="cabeca"> 
+        <nav>
+            <ul>
+                <li><a href="index.html">Principal</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="usuario.html">Usuário</a></li>
+            </ul>
+            <ul>
+                <li><a href="satisfacao.html">Satisfação</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+
+    <h1>Cadastro de Personagem</h1>
+
+        <form id="personagemForm">
+            <label for="nomePersonagem">Nome do Personagem:</label>
+            <input type="text" id="nomePersonagem" required>
+    
+            <label for="personaActor">Ator do Personagem:</label>
+            <input type="text" id="personaActor" required>
+    
+            <button type="button" onclick="addPersona()">Adicionar Personagem</button>
+        </form>
+    
+       <p>Personagens Cadastrados:</p>
+         
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome do Personagem</th>
+                    <th>Ator do Personagem</th>
+                </tr>
+            </thead>
+            <tbody id="listaPersonagem"></tbody>
+        </table>
+
+        <script>
+            var mensagemElement = document.getElementById("mensagem");
+            var bannerWidth = document.getElementById("banner").offsetWidth;
+            var imagem = document.getElementById("img1");
+    
+            function animarMensagem() {
+                var left = -900; // Inicializa a posição à esquerda da tela
+                var interval = setInterval(function() {
+                    left += 5; // Move 5 pixels à direita a cada iteração
+                    mensagemElement.style.left = left + "px";
+                imagem.style.left = (left + 710) + "px";
+        
+                    // Verifica se a mensagem atingiu o final do banner
+                    if (left >= bannerWidth) {
+                        clearInterval(interval); // Para a animação
+                        setTimeout(function() {
+                            mensagemElement.style.left = "-900px";
+                            imagem.style.left = "-900px"; // Reinicia a mensagem à esquerda
+                            animarMensagem(); // Inicia a animação novamente
+                        }, 1000); // Espera 1 segundo antes de reiniciar
+                    }
+                }, 30); // Intervalo de 30 milissegundos para suavizar a animação
+            }
+        
+            animarMensagem(); // Inicia a animação quando a página carrega
+    
+    
+            function addPersona() {
+                const nomePersonagem = document.getElementById("nomePersonagem").value;
+                const personaActor = document.getElementById("personaActor").value;
+    
+                if (nomePersonagem && personaActor) {
+                    const listaPersonagem = document.getElementById("listaPersonagem");
+                    const newRow = listaPersonagem.insertRow();
+    
+                    const cell1 = newRow.insertCell(0);
+                    cell1.innerHTML = nomePersonagem;
+    
+                    const cell2 = newRow.insertCell(1);
+                    cell2.innerHTML = personaActor;
+    
+                    document.getElementById("nomePersonagem").value = "";
+                    document.getElementById("personaActor").value = "";
+                }
+            }
+        </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satisfação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="cabeca"> 
+        <nav>
+            <ul>
+                <li><a href="index.html">Principal</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="usuario.html">Usuário</a></li>
+            </ul>
+            <ul>
+                <li><a href="temporada.html">Personagem</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+
+      <h1>Desconto e Avaliação</h1>
+      <p>Insira o valor total da sua compra:</p>
+      <input type="number" id="valorCompra" placeholder="Insira o valor em R$">
+      <button onclick="calcularDesconto()">Calcular Desconto</button>
+      <p>Desconto aplicado: <span id="desconto"></span></p>
+      <form>
+        Defina seu nível de satisfação:<br>
+        Pouco satisfeito
+        <input type="range" name="satisfacao" min="0" max="10">
+        Muito satisfeito
+        <br>
+
+        <script>
+            function calcularDesconto() {
+                const valorCompra = parseFloat(document.getElementById('valorCompra').value);
+    
+                let desconto = 0;
+    
+                if (valorCompra > 200) {
+                    desconto = 0.2; // 20%
+                } else if (valorCompra > 100) {
+                    desconto = 0.1; // 10%
+                }
+                else if(valorCompra<=100){
+                    desconto=0.05;
+    
+                }
+    
+                const valorDesconto = valorCompra * desconto;
+                document.getElementById('desconto').textContent = `R$ ${valorDesconto.toFixed(2)}`;
+            }
+        </script>
+</body>
+</html>
