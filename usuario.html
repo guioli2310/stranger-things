@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="cabeca"> 
+        <nav>
+            <ul>
+                <li><a href="index.html">Principal</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="temporada.html">Temporada</a></li>
+            </ul>
+            <ul>
+                <li><a href="satisfacao.html">Satisfação</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    
+    <h1>Cadastro Usuário</h1>
+    <form id="cadastroForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome"><br><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha"><br><br>
+
+        <p id="genero">Qual sua temporada fav?</p>
+        <div class="texto">
+        <input type="radio" name="genero" value="romance">1 TEMPORADA <br>
+        <input type="radio" name="genero" value="terror">2 TEMPORADA <br>
+        <input type="radio" name="genero" value="suspense">3 TEMPORADA <br>
+        <input type="radio" name="genero" value="conto">4 TEMPORADA <br>
+        <input type="radio" name="genero" value="poema">5 TEMPORADA(Não lançada) <br>
+       </div>
+
+        <button type="button" onclick="cadastrarUsuario()">Cadastrar</button>
+    </form>
+    
+    <div id="mensagem"></div>
+        
+    <script>
+        function cadastrarUsuario(){
+            var nome = document.getElementById("nome").value;
+            var email = document.getElementById("email").value;
+            var senha = document.getElementById("senha").value;
+        
+        if (nome === "" || email ==="" || senha ==="") {
+            document.getElementById("mensagem").innerHTML= "Por favor, preencha todos os campos."
+            return;
+        }
+
+    var usuario = {
+        nome: nome,
+        email: email,
+        senha: senha
+    };
+
+    console.log("Usuário cadastrado: ", usuario);
+
+    document.getElementById("cadastroForm").reset();
+    document.getElementById("mensagem").innerHTML= "Cadastro realizado com sucesso";
+    }
+    </script>
+</body>
+</html>

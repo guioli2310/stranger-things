@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cadastro Temporada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="cabeca"> 
+        <nav>
+            <ul>
+                <li><a href="index.html">Principal</a></li>
+            </ul>
+
+            <ul>
+                <li><a href="usuario.html">Usuário</a></li>
+            </ul>
+            <ul>
+                <li><a href="satisfacao.html">Satisfação</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    
+    <h1>Cadastro de Temporadas</h1>
+    <form id="registro">
+        <label for="username">Qual temporada:</label>
+        <input type="text" id="username" required><br>
+
+        <label for="ano">Ano que foi lançada:</label>
+        <input type="username" id="username" required><br>
+
+        <label for="nota">Nota para a temporada:</label>
+        <input type="username" id="username" required><br>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        const registro = document.getElementById('registro');
+        const resultado = document.getElementById('resultado');
+
+        registro.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const ano = document.getElementById('username').value;
+            const nota = document.getElementById('username').value;
+
+            // Aqui você pode enviar os dados para um servidor para processamento
+            // Por exemplo, usando o método fetch() para fazer uma solicitação POST
+
+            // Simulação de sucesso (substitua por lógica real)
+            const successMessage = `Cadastro realizado com sucesso! Bem-vindo!`;
+           resultado.textContent = successMessage;
+        });
+        </script>
+</body>
+</html>

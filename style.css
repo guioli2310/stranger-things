@@ -1,0 +1,77 @@
+body{
+    background-color: #FFFFE0;
+}
+#banner {
+    width: 100%;
+    height: 500px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+    position: relative;
+    overflow: hidden;
+}
+
+#mensagem {
+    position: absolute;
+    left: -200px; /* Inicialmente, a mensagem está fora da tela à esquerda */
+    white-space: nowrap;
+}
+#imagem{
+    width: 2000px;
+    height: 500px;
+}
+p{
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+}
+h1{
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
+.animation-container{
+   width: 100%;
+   height: 200px;
+   overflow: hidden;
+}
+#nada{
+    width: 200px;
+    height: 200px;
+    padding: 40px;
+}
+form{
+    margin: 40px 0;
+  }
+  form label, form legend{
+    font-size: 20px;
+    margin: 0 0 10px;
+  }
+  h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  .cabeca{
+	position: relative;
+	width: 2000px;
+	margin: 0 auto;
+	font-size: 30px;
+  }
+  nav{
+	top: 110px;
+	right: 0;
+  }
+  nav li{
+	display: inline;
+	margin: 0 0 0 15px;
+  }
+  nav a{
+	text-transform: uppercase;
+	color: #000000;
+	font-weight: bold;
+	font-size: 20px;
+	text-decoration: none;
+  }
+  nav a:hover{
+	color: #C78C19;
+	text-decoration: underline;
+  }
